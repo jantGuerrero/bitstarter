@@ -1,58 +1,102 @@
+@charset 'UTF-8';
 /* Large desktop */
 @media (min-width: 980px) { 
-  body {
-   padding-top: 60px;
-  }
- .linediv-l {
+ .linediv-l, .linediv-r {
    border-right: 1px white solid;
   }
- .linediv-r {
+/* .linediv-r {
    border-left: 1px white solid;
- }
+ }*/
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) { 
+@media (max-width: 768px) { 
  .copy {
    padding: 2.5% 10%;
  }
  .linediv-l {
    border-bottom: 1px white solid;
+   margin-bottom: 2em;
  }
  .linediv-r {
    border-top: 1px white solid;
  }
+ .thermometer {
+  display: none;
+ }
+ .order {
+  margin-top: 1em;
+  margin-bottom: 1em;
+ }
 }
 
-@media (max-width: 640px) { 
- .heading, .subheading {
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: center;
-  font-weight: 600;
+@media (max-width: 480px) {
+  .thermometer {
+    display: none;
   }
 }
 /* All form factors */
 
 /* Main body and headings */
-body{
+body {
+  padding-top: 5%;
   font-family: 'Cuprum', Helvetica, Arial, sans-serif;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
 }
-.heading, .subheading {
+.navbar {
+  background-color: #000;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 5em;
+}
+.backopacity {
+  background-color: rgba(255,255,255,0.2);
+  padding: 1em 0;
+}
+header, .pitch {
+  /*background-color: #8EB08F;*/
+  /*border-radius: 10px;*/
+}
+header {
+  padding: 2em;
+}
+table {
+  background-color: #8BA470;
+  /*border-top: 1px solid black;*/
+  /*border-right: 2px /*solid #5D7B88;*/
+  /*border-bottom: 2px solid #1A381B;*/
+  color: #333;
+}
+table, .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th{
+    border-radius: 0 0 10px 10px;
+}
+tr {
+  text-transform: uppercase;
+}
+.heading>h1, .subheading>h2 {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   text-align: center;
   font-weight: 800;
-  line-height: 2em;
+  font-size: 6em;
+  color: #2F581D;
 }
-.span12 h1{
+.subheading h2 {
+  color: white;
+  margin-top: -0.5em;
+  font-size: 2.5em;
+}
+.span12>h1{
   font-size: 5em;
 }
-.span12 h2{
+.span12>h2{
   font-size: 3em;
 }
-p.lead {
-  padding-top: 1.5%;
-  font-size: 24px;
+.lead {
+  font-size: 3em;
   line-height: 30px;
+  color: white;
 }
 p {
   font-size: 18px;
@@ -61,20 +105,27 @@ p {
 
 /* Video pitch and Action */
 .pitch {
-  padding: 2.5% 0%;
-}
-.order {
-  padding: 2% 0%;
+  margin-top: 0.5%;
+  padding: 2% 0;
 }
 .actions {
-  background-color: #343434;
-  padding: 3% 0%;
+  /*background-color: #343434;*/
+  padding: 3% 0;
 }
 .video, .thermometer, .order, .social, .statistics {
   text-align: center;
+  vertical-align: middle;
 }
-.statistics h3, .statistics p {
+.statistics {
+  margin-top: 1.5em;
+}
+/*.statistics h3, .statistics p {
   color: white;
+  margin: 0;
+}*/
+.statistics button {
+  text-align: left;
+  margin-top: 1em;
 }
 
 /* Marketing Copy and Footer */
@@ -83,8 +134,15 @@ p {
   padding-bottom: 2.5%;
   text-align: justify;
 }
+.copy p{
+  vertical-align: middle;
+}
 .asset {
-  padding: 2.5% 0%;
+  padding: 2.5% 0;
+}
+.accordion-inner {
+  background-color: #8BA470;
+  color: #333;
 }
 .footer {
   color: #cccccc;
@@ -95,4 +153,71 @@ p {
 }
 .footer a {
   color: #ccccff;
+}
+
+/*SOCIAL BUTTONS*/
+.btn-facebook {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #2b4b90;
+  *background-color: #133783;
+  background-image: -moz-linear-gradient(top, #3b5998, #133783);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b5998), to(#133783));
+  background-image: -webkit-linear-gradient(top, #3b5998, #133783);
+  background-image: -o-linear-gradient(top, #3b5998, #133783);
+  background-image: linear-gradient(to bottom, #3b5998, #133783);
+  background-repeat: repeat-x;
+  border-color: #133783 #133783 #091b40;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff133783', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.btn-facebook.disabled,
+.btn-facebook[disabled] {
+  color: #ffffff;
+  background-color: #133783;
+  *background-color: #102e6d;
+}
+
+.btn-facebook:active,
+.btn-facebook.active {
+  background-color: #0d2456 \9;
+}
+
+.btn-twitter {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #1c95d0;
+  *background-color: #0271bf;
+  background-image: -moz-linear-gradient(top, #2daddc, #0271bf);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2daddc), to(#0271bf));
+  background-image: -webkit-linear-gradient(top, #2daddc, #0271bf);
+  background-image: -o-linear-gradient(top, #2daddc, #0271bf);
+  background-image: linear-gradient(to bottom, #2daddc, #0271bf);
+  background-repeat: repeat-x;
+  border-color: #0271bf #0271bf #014473;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2daddc', endColorstr='#ff0271bf', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus,
+.btn-twitter:active,
+.btn-twitter.active,
+.btn-twitter.disabled,
+.btn-twitter[disabled] {
+  color: #ffffff;
+  background-color: #0271bf;
+  *background-color: #0262a6;
+}
+
+.btn-twitter:active,
+.btn-twitter.active {
+  background-color: #01538d \9;
 }
