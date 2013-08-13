@@ -28,6 +28,9 @@
   margin-top: 1em;
   margin-bottom: 1em;
  }
+ .video {
+  text-align: center;
+ }
 }
 
 @media (max-width: 480px) {
@@ -45,6 +48,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
+}
+.wrapper>.row>.row {
+  margin-bottom: 1.5em;
 }
 .navbar {
   background-color: #000;
@@ -112,7 +118,7 @@ p {
   /*background-color: #343434;*/
   padding: 3% 0;
 }
-.video, .thermometer, .order, .social, .statistics {
+.thermometer, .order, .social, .statistics, .resume {
   text-align: center;
   vertical-align: middle;
 }

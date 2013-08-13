@@ -6,7 +6,7 @@ var html = fs.readFileSync(htmlfile).toString('utf-8');
 
 var app = express.createServer(express.logger());
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/'));
 app.get('/', function(request, response) {
   response.send(html);
 });
